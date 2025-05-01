@@ -109,5 +109,6 @@ export PATH=$PATH:/home/user/.local/bin
 export PATH=$PATH:/home/user/.cargo/bin
 export PATH=$PATH:$HOME/go/bin
 export EDITOR="nvim"
+export VISUAL="nvim"
 eval "$(zoxide init zsh)"
 bindkey -v
