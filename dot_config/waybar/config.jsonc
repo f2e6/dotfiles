@@ -1,0 +1,80 @@
+{
+    "reload_style_on_change": true,
+    "height": 30,
+    "spacing": 10, // Global spacing between modules
+
+    "modules-left": ["hyprland/workspaces"],
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "persistent-workspaces": {
+            "*": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        },
+        // Optional: Uncomment and customize icons if desired
+        // "format-icons": {
+        //     "default": "", // Default icon (optional)
+        //     "active": "",  // Active icon (optional)
+        //     "urgent": "", // Urgent icon (optional)
+        //     "1": "󰈹",
+        //     "2": "",
+        //     "3": "󰍧",
+        //     "4": "󰝚",
+        //     "5": "", // Example for 5
+        //     "6": "", // Example for 6
+        //     "7": "", // Example for 7
+        //     "8": "", // Example for 8
+        //     "9": "", // Example for 9
+        //     "10": "" // Example for 10
+        // }
+    },
+
+    "modules-center": ["hyprland/window"],
+    "hyprland/window": {
+      "max-length": 200,
+      "separate-outputs": true
+    },
+
+    "modules-right": ["pulseaudio", "network", "backlight", "battery", "clock", "tray"], // Reordered slightly for logical grouping perhaps? (Optional)
+    "tray": {
+        "spacing": 10 // Spacing between tray icons specifically
+    },
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": " {:%Y-%m-%d %H:%M}" // Single space after icon
+    },
+    "backlight": {
+        "format": "{icon}  {percent}%", // Single space after icon
+        "format-icons": [""]
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}  {capacity}%", // Single space after icon
+        "format-charging": " {capacity}%", // Single space after icon
+        "format-plugged": " {capacity}%", // Single space after icon
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        "format-wifi": "  {signalStrength}%", // Single space after icon
+        "format-ethernet": " {ipaddr}", // Single space after icon
+        "format-linked": " {ifname} (No IP)", // Single space after icon (already okay)
+        "format-disconnected": "⚠ Disconnected", // Removed extra space
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}",
+        "tooltip-format-disconnected": "Disconnected"
+    },
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "{icon}  {volume}% {format_source}", // Space between volume% and mic info
+        "format-bluetooth": " {icon} {volume}% {format_source}", // Space between volume% and mic info
+        "format-bluetooth-muted": "  {icon} {format_source}", // Space between speaker icon and mic info
+        "format-muted": "  {format_source}", // Space between muted icon and mic info
+        "format-source": " {volume}%", // Mic icon, space, mic volume% (No trailing space needed as % provides separation)
+        "format-source-muted": " ", // Mic muted icon, TRAILING SPACE ADDED
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    }
+}

@@ -1,0 +1,61 @@
+@import 'wallust/colors-waybar.css';
+
+window {
+    background-color: rgba(0, 0, 0, 0); /* Keep it transparent */
+    border-radius: 5px;
+    margin: 5px; /* Margin around the entire bar */
+}
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 14px;
+    font-weight: 600;
+    color: @foreground; /* Set default text color */
+}
+
+#workspaces {
+    /* No additional styles needed here */
+}
+
+#workspaces button {
+    background-color: @color0;
+    padding: 4px 8px; /* Consistent padding for workspace buttons */
+    border-radius: 5px;
+    margin: 0 4px; /* Horizontal spacing between workspace buttons */
+    height: 30px; /* Fixed height for workspace buttons */
+}
+
+#workspaces button:first-child {
+    margin-left: 0; /* No extra margin on the left for the first button */
+}
+
+#workspaces button:last-child {
+    margin-right: 0; /* No extra margin on the right for the last button */
+}
+
+#workspaces button.active {
+    border-color: @color5; /* Active button border color */
+}
+
+#workspaces button.empty {
+    color: @color8; /* Color for empty buttons */
+}
+
+#pulseaudio, #backlight, #network, #battery, #clock, #tray {
+    background-color: @color0;
+    padding: 4px 8px; /* Consistent padding for modules */
+    border-radius: 5px;
+    margin: 0 4px; /* Horizontal spacing between modules */
+    height: 30px; /* Fixed height for modules */
+}
+
+/* Ensure consistent vertical spacing for modules */
+#pulseaudio, #backlight, #network, #battery, #clock, #tray {
+    margin-top: 5px; /* Space above each module */
+    margin-bottom: 5px; /* Space below each module */
+}
+
+/* Remove extra vertical margins for the last module */
+#pulseaudio:last-child, #backlight:last-child, #network:last-child, #battery:last-child, #clock:last-child, #tray:last-child {
+    margin-bottom: 0; /* No extra margin below the last module */
+}

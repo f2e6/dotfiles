@@ -1,0 +1,15 @@
+# [[session]]
+# name = "Downloads 📥"
+# path = "~/Downloads"
+# startup_command = "ls"
+
+[[session]]
+name = "Python 🐍"
+path = "~/Documents/school/programmingI/"
+startup_command = "sh ~/Documents/scripts/pymux.sh"
+
+# [[session]]
+# name = "tmux config"
+# path = "~/c/dotfiles/.config/tmux"
+# startup_command = "nvim tmux.conf"
+# preview_command = "bat --color=always ~/c/dotfiles/.config/tmux/tmux.conf"

@@ -1,0 +1,5 @@
+theme = tokyonight
+confirm-close-surface = false
+background-opacity = 0.8
+gtk-single-instance = true
+quit-after-last-window-closed = false
