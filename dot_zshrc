@@ -104,8 +104,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # cat ~/.cache/wallust/sequences
+# test
 export PATH=$PATH:/home/user/.local/bin
 export PATH=$PATH:/home/user/.cargo/bin
 export PATH=$PATH:$HOME/go/bin
+export EDITOR="nvim"
 eval "$(zoxide init zsh)"
 bindkey -v
