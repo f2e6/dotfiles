@@ -1,11 +1,5 @@
 @import 'wallust/colors-waybar.css';
 
-window {
-  background-color: #15161E;
-  border-radius: 0px;
-  margin: 0 5px;
-}
-
 * {
   font-family: "JetBrainsMono Nerd Font";
   font-size: 14px;
@@ -14,39 +8,28 @@ window {
   border-radius: 0;
 }
 
+window {
+  background-color: @color0;
+  margin: 0 5px;
+}
+
 #pulseaudio,
 #backlight,
 #network,
 #battery,
 #clock,
 #tray,
-#window {
-  background-color: #15161E;
-  padding: 0px 6px;
-  color: @foreground;
-  border-radius: 5px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
+#window,
 #workspaces button {
-  background-color: #15161E;
-  padding: 2px 4px 2px 4px;
-  margin-right: 5px;
-  border-radius: 5px;
+  background-color: @color0;
+  color: @foreground;
   margin-top: 5px;
   margin-bottom: 5px;
-  border: 2px solid #15161E;
-  color: @foreground;
 }
 
-#pulseaudio,
-#backlight,
-#network,
-#battery,
-#clock,
-#tray,
-#workspaces button {}
+#window {
+  padding: 0 6px;
+}
 
 #pulseaudio,
 #backlight,
@@ -55,17 +38,26 @@ window {
 #clock,
 #tray {
   border: 2px solid @color4;
+  border-radius: 5px;
+  padding: 0 6px;
+}
+
+/* Adjust padding for tray specifically */
+#tray {
+  padding: 0 4px;
+}
+
+#workspaces button {
+  padding: 0 2px;
+  margin-right: 5px;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  min-width: 22px;
+  transition: all 0.1s ease;
 }
 
 #workspaces button.active {
   border-bottom: 2px solid @color4;
-  border-top: 2px solid #15161E;
-  border-left: 2px solid #15161E;
-  border-right: 2px solid #15161E;
-}
-
-#workspaces button.focused {
-  border: 2px solid #15161E;
 }
 
 #workspaces button.urgent {
@@ -79,8 +71,7 @@ window {
 #network:hover,
 #battery:hover,
 #clock:hover {
-  background-color: @color0;
-  border: 2px solid @color4;
+  background-color: shade(@color0, 1.2);
 }
 
 #battery.warning {
@@ -89,18 +80,15 @@ window {
 }
 
 #battery.critical {
-  color: @color1;
+  color: @foreground;
   border: 2px solid @color1;
   background-color: @color1;
 }
 
 #network.disconnected {
-  color: @color1;
+  color: @foreground;
   border: 2px solid @color1;
-}
-
-#tray {
-  padding: 0px 4px;
+  background-color: alpha(@color1, 0.3);
 }
 
 #tray>.passive {
