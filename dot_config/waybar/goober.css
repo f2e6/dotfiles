@@ -1,0 +1,148 @@
+@import 'wallust/colors-waybar.css';
+
+window {
+  background-color: rgba(0, 0, 0, 0);
+  /* Transparent bar background */
+  border-radius: 5px;
+  margin: 5px;
+  /* Margin around the entire bar - controlled here */
+}
+
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  /* Reset borders globally */
+  border-radius: 0;
+  /* Reset border radius globally */
+}
+
+/* Default style for individual modules */
+#workspaces button,
+#pulseaudio,
+#backlight,
+#network,
+#battery,
+#clock,
+#tray,
+#window {
+  background-color: @color0;
+  padding: 0px 6px;
+  color: @foreground;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 2px solid @color0;
+  /* Default border - will be overridden for right modules */
+}
+
+#workspaces button {
+  padding: 0px 4px;
+  /* Specific padding for workspace buttons */
+  margin-right: 5px;
+  /* ADDED: Creates space between workspace buttons */
+  /* Note: This inherits margin-top and margin-bottom from the rule above */
+}
+
+/* --- Workspace Specific Styles --- */
+
+#workspaces button.active {
+  border: 2px solid @color5;
+  /* Highlight active workspace */
+}
+
+#workspaces button.focused {
+  border: 2px solid @color5;
+}
+
+#workspaces button.urgent {
+  background-color: @color1;
+  border: 2px solid @color1;
+}
+
+#workspaces button.empty {
+  color: @color8;
+  /* Dimmed font */
+  border: 2px solid @color0;
+  /* Keep default border */
+  /* Background @color0 is inherited */
+}
+
+/* Highlight active or focused empty workspaces */
+#workspaces button.active.empty,
+#workspaces button.focused.empty {
+  border: 2px solid @color5;
+  /* Use the highlight color */
+  color: @color8;
+  /* Keep the dimmed text color from .empty */
+}
+
+
+/* --- Right-Side Module Border Override --- */
+/* Apply active workspace border style permanently to right-side modules */
+#pulseaudio,
+#backlight,
+#network,
+#battery,
+#clock,
+#tray {
+  border: 2px solid @color5;
+  /* Use the same border as active workspace */
+}
+
+
+/* --- Module State/Hover Styles (Overrides defaults and right-side override) --- */
+
+/* Example: Highlight modules on hover */
+#pulseaudio:hover,
+#backlight:hover,
+#network:hover,
+#battery:hover,
+#clock:hover {
+  background-color: @color8;
+  /* Use a subtle hover color */
+  border: 2px solid @color8;
+  /* Hover border overrides the @color5 border */
+}
+
+/* Example: Specific state highlights */
+#battery.warning {
+  color: @color3;
+  /* Yellow for warning */
+  border: 2px solid @color3;
+  /* Warning border overrides the @color5 border */
+}
+
+#battery.critical {
+  color: @color1;
+  /* Red for critical */
+  border: 2px solid @color1;
+  /* Critical border overrides the @color5 border */
+  background-color: @color9;
+}
+
+#network.disconnected {
+  color: @color1;
+  /* Red for disconnected */
+  border: 2px solid @color1;
+  /* Disconnected border overrides the @color5 border */
+}
+
+/* --- Tray Styles --- */
+#tray {
+  padding: 0px 4px;
+  /* Tray might need slightly less padding */
+  /* It already gets border: 2px solid @color5 from the rule above */
+}
+
+#tray>.passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray>.needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: @color3;
+  /* Example attention color */
+  /* Keeps the @color5 border unless overridden */
+}
