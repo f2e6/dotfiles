@@ -104,6 +104,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias dvim="chezmoi edit --watch"
+alias cm="chezmoi"
 # cat ~/.cache/wallust/sequences
 # test
 export PATH=$PATH:/home/user/.local/bin
