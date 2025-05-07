@@ -13,3 +13,8 @@ startup_command = "sh ~/Documents/scripts/pymux.sh"
 # path = "~/c/dotfiles/.config/tmux"
 # startup_command = "nvim tmux.conf"
 # preview_command = "bat --color=always ~/c/dotfiles/.config/tmux/tmux.conf"
+
+
+[[session]]
+name = "dots ⚙️"
+path = "~/.local/share/chezmoi/"
